@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  
+  <div class="app flex items-center flex-col justify-center h-screen">
+    <div class="screen join-screen active w-[30vw] h-auto py-[20px] px-[20px] bg-blue-400 text-white flex flex-col">
+      <div class="form">
+        <h2 class="mb-2 text-2xl">Join The Chat</h2>
+
+        <div class="form-input flex flex-col">
+          <label for="username" class="mb-1 text-[#f7f7f7]">Username</label>
+          <input type="text" class="w-full p-[10px] border-0 outline-0 bg-[#f7f7f7] text-black" placeholder="Your Username" name="username" id="username" required>
+        </div>
+
+        <div class="form-input flex flex-col mt-3">
+          <button class="joinChatBtn p-[10px] bg-blue-600 text-white ">Join</button>
+        </div>
+      </div>
+    </div>
+    <div class="screen chat-screen w-[55vw] h-[80vh overflow-hidden bg-[#f7f7f7] border-2 border-black">
+      <div class="header w-full h-[70px] flex items-center justify-between bg-blue-400 px-[20px] text-white">
+        <div class="logo text-xl">ChatRoom</div>
+        <button class="exitBtn p-[7px] min-w-[80px] bg-black border-0 outline-0">Exit</button>
+      </div>
+
+      <div class="messages overflow-y-auto p-[20px]">
+       <!-- messages will show dinamicilly -->
+      </div>
+
+      <div class="messageInput">
+        <input type="text" placeholder="Enter Your Message Here..." name="message" id="message" required>
+        <button class="sendBtn">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
